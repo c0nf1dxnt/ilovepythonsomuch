@@ -6,3 +6,4 @@ torch==2.2.2
 transformers==4.44.2
 FlagEmbedding==1.2.11
 gliner==0.2.13
+peft==0.13.2

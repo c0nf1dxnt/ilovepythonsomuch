@@ -6,6 +6,7 @@ import torch
 
 from FlagEmbedding import BGEM3FlagModel
 from gliner import GLiNER
+from huggingface_hub import snapshot_download
 
 
 DEFAULT_LABELS = [
@@ -42,7 +43,19 @@ class SearchProcessor:
         if models_dir and os.path.isdir(f"{models_dir}/bge-m3"):
             bge_path = f"{models_dir}/bge-m3"
         else:
-            bge_path = bge_name
+            # FlagEmbedding calls snapshot_download() for remote repo IDs and
+            # pulls the whole repo, including the huge optional ONNX artifact
+            # `onnx/model.onnx_data`. We only use the PyTorch weights via
+            # AutoModel on CPU, so we prefetch a local snapshot without ONNX.
+            bge_path = snapshot_download(
+                repo_id=bge_name,
+                ignore_patterns=[
+                    "onnx/*",
+                    "flax_model.msgpack",
+                    "rust_model.ot",
+                    "tf_model.h5",
+                ],
+            )
 
         print(f"Загрузка GLiNER из {gliner_path}...")
         self.gliner = GLiNER.from_pretrained(gliner_path, **gliner_kwargs).to(self.device)

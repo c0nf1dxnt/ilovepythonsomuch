@@ -5,7 +5,6 @@ spring:
   application:
     name: search-backend
   jackson:
-    property-naming-strategy: SNAKE_CASE
     deserialization:
       fail-on-unknown-properties: false
 

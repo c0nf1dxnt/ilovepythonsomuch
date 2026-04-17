@@ -24,8 +24,7 @@ public class AppConfig {
 
     private final AppProperties props;
 
-    @Bean
-    public ObjectMapper objectMapper() {
+    private ObjectMapper snakeCaseMapper() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -53,12 +52,12 @@ public class AppConfig {
     }
 
     @Bean
-    public WebClient pythonClient(ObjectMapper mapper) {
-        return buildClient(props.python().baseUrl(), mapper);
+    public WebClient pythonClient() {
+        return buildClient(props.python().baseUrl(), snakeCaseMapper());
     }
 
     @Bean
-    public WebClient qdrantClient(ObjectMapper mapper) {
-        return buildClient(props.qdrant().baseUrl(), mapper);
+    public WebClient qdrantClient() {
+        return buildClient(props.qdrant().baseUrl(), snakeCaseMapper());
     }
 }
