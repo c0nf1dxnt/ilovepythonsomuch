@@ -1,0 +1,15 @@
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/SearchApplication.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/config/AppConfig.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/config/AppProperties.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/controller/SearchController.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/Chat.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/IndexRequest.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/Message.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/PreparedChunk.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/PreparedQuery.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/SearchHit.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/SearchRequest.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/model/SearchResponse.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/service/PythonClient.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/service/QdrantService.java
+/Users/c0nf1dxnt/hackathon/java-backend/src/main/java/com/hackathon/search/service/SearchService.java
